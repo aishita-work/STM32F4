@@ -43,7 +43,7 @@ void pa1_adc_interrupt_init(void){
 	/*To enable interrupt,we need to enable it in the NVIC and then enable it in the control register as well.We'll do the control register first. Go to the reference manual, go to ADC_CR1.
 	 We have IE here. IE  stands for interrupt init. We want, end of conversion interrupt init, bit 5 over here.Create a symbolic CR1_EOCIE. Come over here and say define CR1. EOCIE(End Of Conversion interrupt init).*/
 	/*Enable ADC end-of-conversion interrupt*/
-	ADC->CR1 |=CR1_EOCIE;
+	ADC1->CR1 |=CR1_EOCIE;
 
 	/*Enable ADC interrupt in NVIC*/
 	NVIC_EnableIRQ(ADC_IRQn); // check exti.c file in 15_input_interrupt project.
